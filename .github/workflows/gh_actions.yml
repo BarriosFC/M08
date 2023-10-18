@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: hoal
-      - run: echo "Hola"
+        run: echo "Hola"
