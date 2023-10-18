@@ -1,0 +1,12 @@
+name: gh_actions
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  buildo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hoal
+      - run: echo "Hola"
