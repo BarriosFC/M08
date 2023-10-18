@@ -8,5 +8,21 @@ jobs:
   buildo:
     runs-on: ubuntu-latest
     steps:
-      - name: hoal
-        run: echo "Hola"
+      - uses: actions/checkout@v3
+      - name: Install Flask
+        run: pip3 install flask
+      
+      - name: Run API
+        run: python3 api_calculadora.py &
+  
+      - name: Suma
+        run: curl 127.0.0.1:5000/suma/7/3 | grep '{"resultat":10}'
+  
+      - name: Resta
+        run: curl 127.0.0.1:5000/resta/7/3 | grep '{"resultat":4}'
+  
+      - name: Multiplica
+        run: curl 127.0.0.1:5000/multiplica/7/3 | grep '{"resultat":21}'
+  
+      - name: Divisio
+        run: curl 127.0.0.1:5000/divideix/27/3 | grep '{"resultat":9.0}'
